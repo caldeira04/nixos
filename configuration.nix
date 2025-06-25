@@ -121,9 +121,13 @@
       ls = "exa";
       l = "exa -l";
       la = "exa -la";
+      ga = "git add";
+      gs = "git status";
+      gc = "git commit";
+      gco = "git checkout";
     };
     promptInit = ''
-      export PATH=$PATH:/home/caldeira/.local/bin
+      export PATH=$PATH:/home/caldeira/.local/scripts
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
       source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
