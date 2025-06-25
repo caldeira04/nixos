@@ -18,8 +18,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    self.url = "git+file:///home/caldeira/nixos?submodules=1";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
