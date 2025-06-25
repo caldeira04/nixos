@@ -48,8 +48,8 @@
   # plain files is through 'home.file'.
   home.file = {
     ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
-    ".config/hypr/hyprland.conf".source = ./dotfiles/.config/hypr/hyprland.conf;
-    ".config/kitty/kitty.conf".source = ./dotfiles/.config/kitty/kitty.conf;
+    ".config/hypr/".source = ./dotfiles/.config/hypr;
+    ".config/kitty/".source = ./dotfiles/.config/kitty;
     ".config/nvim/".source = ./dotfiles/.config/nvim;
     ".config/spotify-player/".source = ./dotfiles/.config/spotify-player;
     ".config/waybar/".source = ./dotfiles/.config/waybar;
