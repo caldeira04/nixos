@@ -123,7 +123,7 @@
       la = "exa -la";
       ga = "git add";
       gs = "git status";
-      gc = "git commit";
+      gc = "git commit --verbose";
       gco = "git checkout";
     };
     promptInit = ''
