@@ -31,18 +31,29 @@
     bat
     yazi
     spotify-player
-    cava
     vesktop
     eza
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     tmux
     fzf
-    ncspot
+    pavucontrol
+    typescript
+    gimp
+    flameshot
+    waybar
+    p7zip
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".p10k.zsh".source = ./dotfiles/.p10k.zsh;
+    ".config/hypr/".source = ./dotfiles/.config/hypr;
+    ".config/kitty/".source = ./dotfiles/.config/kitty;
+    ".config/nvim/".source = ./dotfiles/.config/nvim;
+    ".config/spotify-player/".source = ./dotfiles/.config/spotify-player;
+    ".config/waybar/".source = ./dotfiles/.config/waybar;
+    ".local/scripts/".source = ./dotfiles/.local/scripts;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
