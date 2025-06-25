@@ -63,6 +63,7 @@ button:hover {
 
 #clock,
 #cpu,
+#battery,
 #memory,
 #disk,
 #temperature,
@@ -122,7 +123,7 @@ button:hover {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
-  color: #ffffff;
+  color: #000000;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -170,6 +171,7 @@ label:focus {
 
 #backlight {
   background-color: #ebbcba;
+  color: #000000;
 }
 
 #network {
@@ -211,6 +213,7 @@ label:focus {
 
 #temperature {
   background-color: #ebbcba;
+  color: #000000;
 }
 
 #temperature.critical {
