@@ -79,7 +79,8 @@
   rofi-wayland
   gcc
   nodejs_22
-  python314
+  python311
+  python311Packages.pip
   go
   cargo
   rustc
@@ -107,6 +108,13 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+
+    ];
+  };
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -131,6 +139,17 @@
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
       source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
       source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    '';
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+    dataDir = "/var/lib/postgresql/15";
+    initialScript = pkgs.writeText "initialScript.sql" ''
+      CREATE DATABASE caldeira;
+      CREATE USER caldeira WITH ENCRYPTED PASSWORD '1987';
+      GRANT ALL PRIVILEGES ON DATABASE caldeira TO caldeira;
     '';
   };
 
