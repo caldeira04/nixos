@@ -20,6 +20,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  virtualisation.docker.enable = true;
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -34,6 +35,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
+    LC_CTYPE = "pt_BR.UTF-8";
     LC_ADDRESS = "pt_BR.UTF-8";
     LC_IDENTIFICATION = "pt_BR.UTF-8";
     LC_MEASUREMENT = "pt_BR.UTF-8";
@@ -49,6 +51,15 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "intl";
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+    initialScript = pkgs.writeText "init.sql" ''
+      CREATE USER caldeira WITH PASSWORD '1987';
+      CREATE DATABASE caldeira WITH OWNER caldeira;
+    '';
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -85,6 +96,12 @@
   rustc
   rust-analyzer
   killall
+  spotify
+  ];
+
+  fonts.packages = with pkgs; [
+    google-fonts
+    geist-font
   ];
 
   xdg.portal.enable = true;
@@ -150,7 +167,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

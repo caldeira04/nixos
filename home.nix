@@ -30,7 +30,6 @@
     btop
     bat
     yazi
-    spotify-player
     vesktop
     eza
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
@@ -43,6 +42,8 @@
     waybar
     p7zip
     telegram-desktop
+    obs-studio
+    guvcview
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
