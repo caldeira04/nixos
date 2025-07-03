@@ -97,6 +97,8 @@
   rust-analyzer
   killall
   spotify
+  bun
+  vscode
   ];
 
   fonts.packages = with pkgs; [
