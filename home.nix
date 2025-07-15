@@ -44,6 +44,8 @@
     telegram-desktop
     obs-studio
     guvcview
+    ffmpeg
+    openssl
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
